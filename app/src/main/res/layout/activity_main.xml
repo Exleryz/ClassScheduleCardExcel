@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/btn_find_file"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Find File" />
+        <Spinner
+            android:id="@+id/spinner_grade"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            />
+
+        <Spinner
+            android:id="@+id/spinner_class"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btn_refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="刷新课程表"/>
+
+        <Button
+            android:id="@+id/btn_show"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="查看最近课程"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#00FF7F"/>
+        <!--显示星期-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:background="@android:color/white">
+            <com.yezhou.classschedulecardexcel.WeekTitle
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"/>
+        </LinearLayout>
+        <!--显示课表详细信息-->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <!--显示多少节课-->
+                <LinearLayout
+                    android:layout_width="25dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="92dp"
+                        android:text="一"
+                        android:textSize="10dp"
+                        android:gravity="center"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="92dp"
+                        android:textSize="12dp"
+                        android:text="二"
+                        android:gravity="center"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="92dp"
+                        android:textSize="12dp"
+                        android:text="三"
+                        android:gravity="center"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="92dp"
+                        android:textSize="12dp"
+                        android:text="四"
+                        android:gravity="center"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="92dp"
+                        android:textSize="12dp"
+                        android:text="五"
+                        android:gravity="center"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="92dp"
+                        android:textSize="12dp"
+                        android:text="六"
+                        android:gravity="center"/>
+
+                </LinearLayout>
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#E5E5E5"/>
+                <GridView
+                    android:id="@+id/courceDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:numColumns="7"
+                    android:horizontalSpacing="1dp"
+                    android:verticalSpacing="1dp"
+                    android:stretchMode="columnWidth"
+                    android:background="#E5E5E5">
+                </GridView>
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+</LinearLayout>
